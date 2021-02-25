@@ -1,0 +1,54 @@
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
+hook_add = """
+let g:go_fmt_command = "goimports"
+nmap <leader>t <Plug>(go-test)
+nmap <leader>s <Plug>(go-decls)
+nmap <leader>gi :<C-u>GoImpl<CR>
+nmap <leader>run <Plug>(go-run-vertical)
+"""
+
+[[plugins]]
+repo = 'vim-test/vim-test'
+on_ft = ['typescript', 'typescriptreact']
+hook_add = """
+nmap <leader>t :<C-u>call CocAction('runCommand', 'jest.fileTest', ['%'])<CR>
+nmap <leader>T :<C-u>call CocAction('runCommand', 'jest.projectTest')<CR>
+"""
+
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript', 'typescriptreact']
+
+[[plugins]]
+repo = 'peitalin/vim-jsx-typescript'
+on_ft = ['typescript', 'typescriptreact']
+depends = 'typescript-vim'
+
+[[plugins]]
+repo = 'jparise/vim-graphql'
+on_ft = ['graphql']
+
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = ['rust']
+hook_add = """
+let g:rust_clip_command = 'pbcopy'
+let g:rustfmt_autosave = 1
+"""
+
+[[plugins]]
+repo = 'vim-syntastic/syntastic'
+on_ft = ['rust']
+hook_add = """
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+"""

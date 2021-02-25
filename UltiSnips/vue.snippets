@@ -1,0 +1,51 @@
+snippet ci "console.info"
+console.info("$1: ", $1)
+endsnippet
+
+snippet con "const"
+const ${1} = ${2}
+endsnippet
+
+snippet if
+if (${1}) {
+  ${VISUAL}
+}
+endsnippet
+
+snippet importVue "import Vue from 'vue'"
+import Vue from "vue"
+endsnippet
+
+snippet Vue.extend "Vue.extend()"
+import Vue from "vue"
+
+interface State {
+}
+
+interface Computed {
+}
+
+interface Method {
+}
+
+interface Props {
+}
+
+export default Vue.extend<State, Method, Computed, Props>({
+  props: {
+  },
+  data() {
+    return {
+    }
+  },
+  computed: {
+  },
+  methods: {
+  },
+})
+
+endsnippet
+
+snippet prom "promise"
+Promise<$1>
+endsnippet

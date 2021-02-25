@@ -1,0 +1,87 @@
+global !p
+def lowercase(s):
+    if len(s) > 1:
+        return s[0].lower() + s[1:]
+    else:
+        return s.lower()
+endglobal
+
+snippet ci "console.info"
+console.info('$1: ', $1)
+endsnippet
+
+snippet cd "console.debug"
+console.debug('$1: ', $1)
+endsnippet
+
+
+snippet importReact "React.FC"
+import React from 'react';
+import {css} from '@emotion/react';
+
+const `!p
+snip.rv = lowercase(t[1]) + 'Style'
+` = css({
+})
+
+interface Props {
+  ${2:value: string}
+}
+
+export const ${1}: React.FC<Props> = ({$2}: Props) => {
+  return (
+		<div css={`!p
+snip.rv = lowercase(t[1]) + 'Style'
+`}>
+		</div>
+	)
+}
+endsnippet
+
+snippet fc "React.FC"
+const `!p
+snip.rv = lowercase(t[1]) + 'Style'
+` = css({
+})
+
+interface `!p
+snip.rv = lowercase(t[1])
+`Props {
+  ${2:value: string}
+}
+
+const ${1}: React.FC<`!p
+snip.rv = lowercase(t[1])
+`Props> = ({$2}: `!p
+snip.rv = lowercase(t[1])
+`Props) => {
+  return (
+		<div css={`!p
+snip.rv = lowercase(t[1]) + 'Style'
+`}>
+		</div>
+	)
+}
+endsnippet
+
+snippet rn "React.FC for ReactNative"
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+
+const styles = StyleSheet.create({
+  `!p snip.rv = lowercase(t[1]) `: {
+	},
+});
+
+interface `!p snip.rv = lowercase(t[1])`Props {
+  ${2}
+}
+
+const ${1}: React.FC<`!p snip.rv = lowercase(t[1])`Props> = ({$2}: `!p snip.rv = lowercase(t[1])`Props) => (
+  <View style={styles.`!p snip.rv = lowercase(t[1])`}>
+	  ${2}
+  </View>
+);
+
+export default $1;
+endsnippet

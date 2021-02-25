@@ -1,0 +1,6 @@
+{
+    "eslint.autoFixOnSave": true,
+    "vetur.validation.templateProps": true,
+    "vetur.useWorkspaceDependencies": true,
+    "graphql.filetypes": ["graphql", "graphqls"]
+}
