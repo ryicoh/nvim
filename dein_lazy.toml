@@ -7,14 +7,14 @@ nmap <leader>t <Plug>(go-test)
 nmap <leader>s <Plug>(go-decls)
 nmap <leader>gi :<C-u>GoImpl<CR>
 nmap <leader>run <Plug>(go-run-vertical)
+nmap <leader>gr :<C-u>call go#lsp#Restart()<CR>
 """
 
 [[plugins]]
 repo = 'vim-test/vim-test'
 on_ft = ['typescript', 'typescriptreact']
 hook_add = """
-nmap <leader>t :<C-u>call CocAction('runCommand', 'jest.fileTest', ['%'])<CR>
-nmap <leader>T :<C-u>call CocAction('runCommand', 'jest.projectTest')<CR>
+nmap <leader>T :<C-u>call CocAction('runCommand', 'jest.fileTest', ['%'])<CR>
 """
 
 
@@ -51,4 +51,17 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height=4
 """
+
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = ['vue']
+
+[[plugins]]
+repo = 'dart-lang/dart-vim-plugin'
+on_ft = ['dart']
+hook_add = """
+let g:dart_format_on_save = 1
+"""
+

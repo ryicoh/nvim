@@ -21,6 +21,7 @@ set fileformats=unix,dos,mac
 set termguicolors
 set wildignore+=*node_modules/**
 set wildignore+=*vendor/**
+set number relativenumber
 
 lang en_US.UTF-8
 
@@ -64,3 +65,5 @@ noremap <space>9 9gt
 noremap <space>0 :<C-U>tablast<CR>
 
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+autocmd BufNewFile,BufRead *.dart set filetype=dart
+autocmd BufNewFile,BufRead Podfile,*.podspec set filetype=ruby

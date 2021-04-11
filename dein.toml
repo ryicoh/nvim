@@ -76,3 +76,6 @@ command! E Explore
 
 [[plugins]]
 repo = 'kburdett/vim-nuuid'
+
+[[plugins]]
+repo = 'preservim/nerdcommenter'

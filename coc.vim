@@ -5,13 +5,20 @@ let g:coc_global_extensions = [
       \'coc-highlight',
       \'coc-vetur',
       \'coc-eslint',
+      \'coc-jest',
       \'coc-go',
       \'coc-json',
+      \'coc-format-json',
       \'coc-css',
       \'coc-graphql',
       \'coc-fzf-preview',
       \'coc-tsserver',
-      \'coc-git'
+      \'coc-git',
+      \'coc-rls',
+      \'coc-rust-analyzer',
+      \'coc-pyright',
+      \'coc-flutter',
+      \'coc-jedi'
       \]
 
 inoremap <silent><expr> <TAB>
@@ -36,6 +43,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 
+nnoremap <C-j> :<C-u>CocAction<CR>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
