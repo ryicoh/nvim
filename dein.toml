@@ -52,6 +52,10 @@ colorscheme gruvbox
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
+hook_add = """
+let g:airline#extensions#whitespace#enabled = 0
+"""
+
 
 [[plugins]]
 repo = 'honza/vim-snippets'

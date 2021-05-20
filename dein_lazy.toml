@@ -3,6 +3,8 @@ repo = 'fatih/vim-go'
 on_ft = ['go']
 hook_add = """
 let g:go_fmt_command = "goimports"
+let g:go_def_mode = 'godef'
+
 nmap <leader>t <Plug>(go-test)
 nmap <leader>s <Plug>(go-decls)
 nmap <leader>gi :<C-u>GoImpl<CR>

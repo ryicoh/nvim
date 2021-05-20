@@ -18,7 +18,8 @@ let g:coc_global_extensions = [
       \'coc-rust-analyzer',
       \'coc-pyright',
       \'coc-flutter',
-      \'coc-jedi'
+      \'coc-jedi',
+      \'coc-java'
       \]
 
 inoremap <silent><expr> <TAB>

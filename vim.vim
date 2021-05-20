@@ -22,13 +22,13 @@ set termguicolors
 set wildignore+=*node_modules/**
 set wildignore+=*vendor/**
 set number relativenumber
+set spell spelllang=en_us
 
 lang en_US.UTF-8
 
 let g:netrw_banner=0
 let g:netrw_timefmt="%Y/%m/%d(%a) %H:%M:%S"
 let g:netrw_preview=1
-
 
 command! W  w
 command! Q  q
@@ -67,3 +67,8 @@ noremap <space>0 :<C-U>tablast<CR>
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 autocmd BufNewFile,BufRead *.dart set filetype=dart
 autocmd BufNewFile,BufRead Podfile,*.podspec set filetype=ruby
+
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
