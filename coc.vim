@@ -19,7 +19,9 @@ let g:coc_global_extensions = [
       \'coc-pyright',
       \'coc-flutter',
       \'coc-jedi',
-      \'coc-java'
+      \'coc-java',
+      \'coc-xml',
+      \'coc-sql'
       \]
 
 inoremap <silent><expr> <TAB>
@@ -45,6 +47,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 
 nnoremap <C-j> :<C-u>CocAction<CR>
+xnoremap <C-j> :<C-u>CocAction<CR>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -96,11 +99,11 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
 nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
 nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+"nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+"nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+"nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+"nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+"nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 let g:fzf_preview_floating_window_rate = 0.9
 let g:fzf_preview_direct_window_option = ''
@@ -109,7 +112,8 @@ let g:fzf_preview_quit_map = 1
 let g:fzf_preview_buffers_jump = 0
 
 nnoremap <silent> <space>g :<C-u>CocCommand fzf-preview.GitActions<CR>
-nnoremap <silent> <space>b :<C-u>CocCommand fzf-preview.Buffers<CR>
+nnoremap <silent> <space>s :<C-u>CocCommand fzf-preview.GitStatus<CR>
+nnoremap <silent> <space>v :<C-u>CocCommand fzf-preview.Buffers<CR>
 nnoremap <silent> <space>j :<C-u>CocCommand fzf-preview.Jumps<CR>
 nnoremap <silent> <space>q :<C-u>CocCommand fzf-preview.QuickFix<CR>
 

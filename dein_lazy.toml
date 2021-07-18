@@ -67,3 +67,6 @@ hook_add = """
 let g:dart_format_on_save = 1
 """
 
+[[plugins]]
+repo = 'natebosch/dartlang-snippets'
+on_ft = ['dart']

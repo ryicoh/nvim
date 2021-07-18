@@ -55,12 +55,32 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
+" https://github.com/junegunn/fzf.vim/issues/647
+function! s:get_registers() abort
+  redir => l:regs
+  silent registers
+  redir END
+
+  return split(l:regs, '\n')[1:]
+endfunction
+
+function! s:registers(...) abort
+  let l:opts = {
+        \ 'source': s:get_registers(),
+        \ 'sink': {x -> feedkeys(matchstr(x, '\v^\S+\ze.*') . (a:1 ? 'P' : 'p'), 'x')},
+        \ 'options': '--prompt="Reg> "'
+        \ }
+  call fzf#run(fzf#wrap(l:opts))
+endfunction
+
+command! -bang Registers call s:registers('<bang>' ==# '!')
+
 nnoremap <silent> <space>f :<C-u>Files<CR>
 nnoremap <silent> <C-p>    :<C-u>Files<cr>
 nnoremap <silent> <space>h :<C-u>History<CR>
 nnoremap <silent> <space>r :<C-u>Rg<CR>
 " nnoremap <silent> <space>g :<C-u>GFiles?<CR>
-nnoremap <silent> <space>b :<C-u>GBrowse<CR>
+nnoremap <silent> <leader>b :<C-u>GBrowse<CR>
 " nnoremap <silent> <space>s :<C-u>Gstatus<CR>
 nnoremap <silent> <space>d :<C-u>Gdiff<CR>
 nnoremap <silent> <C-_>    :<C-u>SearchHistory<CR>
@@ -71,3 +91,4 @@ nnoremap          <space>/ :<C-u>nohlsearch<CR>
 nnoremap <silent> <space>: :<C-u>Commands<CR>
 nnoremap <silent> <space>w :<C-u>Windows<CR>
 nnoremap <silent> <space>m :<C-u>Marks<CR>
+nnoremap <silent> <space>y :<C-u>Registers<CR>

@@ -14,6 +14,8 @@
       "default": true
     }
   ],
+  "java.format.onType.enabled": true,
   "java.format.settings.url": "/Users/ryicoh/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
-  "java.format.onType.enabled": true
+  "sql.database": "postgresql",
+  "list.source.files.excludePatterns": ["/Users/ryicoh/.pub-cache/**"]
 }
