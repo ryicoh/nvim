@@ -86,3 +86,15 @@ repo = 'kburdett/vim-nuuid'
 
 [[plugins]]
 repo = 'preservim/nerdcommenter'
+
+[[plugins]]
+repo = 'junegunn/vim-peekaboo'
+hook_add = """
+let g:peekaboo_window="vert bo 60new"
+"""
+
+[[plugins]]
+repo = 'Yilin-Yang/vim-markbar'
+hook_add = """
+let g:markbar_width = 60
+"""
