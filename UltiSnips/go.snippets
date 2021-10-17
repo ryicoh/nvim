@@ -3,3 +3,32 @@ if err != nil {
 	return err
 }
 endsnippet
+
+snippet pr "fmt.Println"
+fmt.Println("$1:", $1)
+endsnippet
+
+snippet "ctx, cancel" "ctx, cancel := context.WithCancel(context.Background())"
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
+endsnippet
+
+snippet eg "errgroup"
+eg, egctx := errgroup.WithContext(ctx)
+endsnippet
+
+snippet eg.Go "eg.Go(func() {...})"
+eg.Go(func() error {
+	return nil
+})
+endsnippet
+
+snippet eg.Wait "eg.Wait(...)"
+if err := eg.Wait(); err != nil {
+	return err
+}
+endsnippet
+
+snippet fmt.F "fmt.Fprintf"
+fmt.Fprintf(os.Stderr, "err: %v", err)
+endsnippet

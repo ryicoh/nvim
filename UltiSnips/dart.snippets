@@ -1,3 +1,38 @@
 snippet pr "print(...)"
 print('${1:${VISUAL}}: \${$1}');
 endsnippet
+
+snippet Consumer "ConsumerWidget"
+class $1 extends ConsumerWidget {
+  $1({Key? key}) : super(key: key);
+  
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Container($2);
+  }
+}
+endsnippet
+
+snippet testmain "main function for testing"
+import 'package:test/test.dart';
+void main() {
+  test("$1", () {
+		final actual = ${2:true};
+		expect(actual, equals(${3:true}));
+	});
+}
+endsnippet
+
+snippet StatelessWidget "StatelessWidget"
+class $1 extends StatelessWidget {
+}
+endsnippet
+
+snippet importgen "import generated.graphql.dart"
+import 'package:workschool/graphql/generated.graphql.dart';
+endsnippet
+
+snippet co "const"
+const 
+endsnippet
+

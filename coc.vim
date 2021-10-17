@@ -21,7 +21,8 @@ let g:coc_global_extensions = [
       \'coc-jedi',
       \'coc-java',
       \'coc-xml',
-      \'coc-sql'
+      \'coc-sql',
+      \'coc-vimlsp',
       \]
 
 inoremap <silent><expr> <TAB>
@@ -47,7 +48,9 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 
 nnoremap <C-j> :<C-u>CocAction<CR>
-xnoremap <C-j> :<C-u>CocAction<CR>
+xnoremap <C-j> :<C-u>'<,'>CocAction<CR>
+"xnoremap <C-j> <Plug>(coc-codeaction-selected)
+
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -63,9 +66,6 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 nmap <leader>rn <Plug>(coc-rename)
 
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
@@ -74,10 +74,7 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>ac  <Plug>(coc-codeaction)
-nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>ga  :<C-u>Git add -- .<CR>
 
 xmap if <Plug>(coc-funcobj-i)
 omap if <Plug>(coc-funcobj-i)

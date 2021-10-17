@@ -1,4 +1,13 @@
 [[plugins]]
+repo = 'ryicoh/vim-showjump'
+rev = 'v0.1'
+hook_add = """
+set updatetime=200
+let g:ryicoh#vim_showjump#5jk_enabled = 1
+let g:ryicoh#vim_showjump#9jk_enabled = 1
+"""
+
+[[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
@@ -94,7 +103,7 @@ let g:peekaboo_window="vert bo 60new"
 """
 
 [[plugins]]
-repo = 'Yilin-Yang/vim-markbar'
+repo = "jacquesbh/vim-showmarks"
 hook_add = """
-let g:markbar_width = 60
+autocmd BufNewFile,BufRead * DoShowMarks
 """

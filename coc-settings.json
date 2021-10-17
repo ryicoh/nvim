@@ -1,4 +1,10 @@
 {
+  "list.normalMappings": {
+    "<C-c>": "do:exit"
+  },
+  "list.insertMappings": {
+    "<C-c>": "do:exit"
+  },
   "eslint.autoFixOnSave": true,
   "vetur.validation.templateProps": true,
   "vetur.useWorkspaceDependencies": true,
@@ -17,5 +23,9 @@
   "java.format.onType.enabled": true,
   "java.format.settings.url": "/Users/ryicoh/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml",
   "sql.database": "postgresql",
-  "list.source.files.excludePatterns": ["/Users/ryicoh/.pub-cache/**"]
+  "flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false,
+  "flutter.openDevLogSplitCommand": "botright 10split",
+  "flutter.runDevToolsAtStartup": true,
+  "flutter.selectedDeviceId": "chrome",
+  "flutter.autoOpenDevLog": true
 }

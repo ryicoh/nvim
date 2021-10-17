@@ -42,8 +42,8 @@ nnoremap <leader>vs :<C-u>source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>so :<C-u>source ~/.config/nvim/init.vim<CR>
 nnoremap z<CR> 5kz<CR>5j
 nnoremap zb 5jzb5k
-nnoremap <C-f> 5k<C-f>5j
-nnoremap <C-b> 5j<C-b>5k
+"nnoremap <C-f> 5k<C-f>5j
+"nnoremap <C-b> 5j<C-b>5k
 nnoremap g<C-o> :<C-u>Back<CR>
 nnoremap g<C-i> :<C-u>Forward<CR>
 nnoremap <silent><nowait> <space>/  :<C-u>set nohlsearch<CR>
@@ -72,3 +72,5 @@ nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
+
+cnoremap <C-A> <Home>
